@@ -1,0 +1,60 @@
+<div class="custForm">
+  <h1>Customers</h1>
+  <form name="myForm" (ngSubmit) = "add(myForm)" #myForm="ngForm"  >
+
+      <input type="text" name="cname" required #cnmodelame="ngModel" [(ngModel)]="model.cname" placeholder="Customer Name"/>
+      <input type="text" name="nic" required #nic="ngModel" [(ngModel)]="model.nic" placeholder="NIC"/>
+      <!-- <input type="email" name="email" #email="ngModel" [(ngModel)]="model.email"/> -->
+      <Button  class="submit">Add</Button>
+  </form>
+
+</div>
+
+
+ 
+  
+<!-- <div class="custForm">
+<div class="updateDiv" *ngIf="custDetails">
+<h1>Customers Update</h1>
+  <form name="form" (ngSubmit) = "update()" #fany = "ngForm" >
+      <input type="text" name="ucname" required #ucname="ngModel" [(ngModel)]="custDetails.cname" placeholder="Customer Name"/>
+      <input type="text" name="unic" required #unic="ngModel" [(ngModel)]="custDetails.nic" placeholder="NIC" readonly/>
+     
+      <Button  class="submit">Update</Button>
+      
+    
+  </form>
+</div>
+</div>
+
+<br> -->
+
+<div id="search-component">
+  <h4>Customer Search</h4>
+
+  <input type="text" placeholder="Type to search" name="SearchPipe" [(ngModel)]="SearchPipe" />
+</div> 
+
+
+<!-- <input #searchBox id="search-box" (keyup)="search(searchBox.value)" /> -->
+<div>
+        <table class="customerTable">
+          <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>NIC</th>
+            <th></th>
+
+          </tr>
+          </thead>
+          <tbody>
+        <tr *ngFor="let customer of customers | filter : SearchPipe;  let i = index" (click)="rowClick(customer)">
+              <td>{{customer.cname}}</td> 
+              <td>{{customer.nic}}</td>
+              <td><button (click) ="delete(customer)" class="delete">X</button></td>
+          </tr>
+        </tbody>
+        </table>
+</div>
+
+

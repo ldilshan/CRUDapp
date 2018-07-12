@@ -1,0 +1,20 @@
+ <!-- <div class="custForm">
+  <div  *ngIf="custDetails">
+  <h1>Customers Update</h1>
+    <form name="form" (ngSubmit) = "update()" #fany = "ngForm" >
+        <input type="text" name="ucname" required #ucname="ngModel" [(ngModel)]="custDetails.cname" placeholder="Customer Name"/>
+        <input type="text" name="unic" required #unic="ngModel" [(ngModel)]="custDetails.nic" placeholder="NIC" readonly/>
+        <Button  class="submit">Update</Button>
+        
+      sqsqsqws
+    </form>
+  </div>
+  </div>  -->
+<div class="custForm" *ngIf="customer">
+<h1>Customer Update</h1>
+<form name="form" (ngSubmit) = "update()" #fany = "ngForm" >
+    <input type="text" name="ucname" required #ucname="ngModel" [(ngModel)]="customer.cname" placeholder="Customer Name"/>
+    <input type="text" name="unic" required #unic="ngModel" [(ngModel)]="customer.nic" placeholder="NIC" readonly/>
+    <Button  class="submit">Update</Button>
+</form>
+</div>
